@@ -115,15 +115,15 @@ class Encoding extends Component {
   }
 
   render() {
-    const { type, encode } = this.props
+    const { type, encode, delay } = this.props
     const { decode, time, string } = this.state
     return (
       <div className="container">
         <h3 style={{ textAlign: 'center' }}>{type}</h3>
         <div className="column">
           <h5>Binary: {encode.string}</h5>
-          <h5>Space: {encode.string.length}</h5>
-          <h5>Decode Time: {time}</h5>
+          <h5>Space: {encode.string.length} bits</h5>
+          <h5>Decode Time: {Math.round(time * delay * 1000) / 1000000} seconds</h5>
           <table>
             <thead>
               <tr>

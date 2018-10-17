@@ -13,11 +13,11 @@ class IndexPage extends Component {
   encode = string => {
     const tree = new Tree(string)
     const fixed = new Fixed(string)
-    const delay =  1000 / Math.max(tree.encoded.string.length, fixed.encoded.string.length);
+    // const delay =  1000 / Math.max(tree.encoded.string.length, fixed.encoded.string.length);
     this.setState({
       tree,
       fixed,
-      delay,
+      delay: 100,
     })
   }
 
